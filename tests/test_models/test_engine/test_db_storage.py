@@ -131,6 +131,8 @@ class TestDBStorage(unittest.TestCase):
         state_date = (name='Johannesburg')
 
 	state_instance = State(**state_data)
+	storage.new(state_instance)
+	storage.save()
 
 	retrieved_state = storage.get(State, state_instance.id)
 
